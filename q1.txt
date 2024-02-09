@@ -1,0 +1,138 @@
+nikita@TIBCO-PG030Z1L:~$ sudo apt install apache2
+[sudo] password for nikita:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+apache2 is already the newest version (2.4.52-1ubuntu4.7).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+nikita@TIBCO-PG030Z1L:~$ pwd
+/home/nikita
+nikita@TIBCO-PG030Z1L:~$ ls
+nikita@TIBCO-PG030Z1L:~$ mkdir assignment3
+nikita@TIBCO-PG030Z1L:~$ cd assignment3/
+nikita@TIBCO-PG030Z1L:~/assignment3$ ls
+nikita@TIBCO-PG030Z1L:~/assignment3$ nano /var/www/html/index.html
+nikita@TIBCO-PG030Z1L:~/assignment3$ ls
+nikita@TIBCO-PG030Z1L:~/assignment3$ nano index.html
+nikita@TIBCO-PG030Z1L:~/assignment3$ ls
+index.html
+
+nikita@TIBCO-PG030Z1L:~/assignment3$ pwd
+/home/nikita/assignment3
+nikita@TIBCO-PG030Z1L:~/assignment3$ cd ..
+nikita@TIBCO-PG030Z1L:~$ ls
+assignment3
+nikita@TIBCO-PG030Z1L:~$ cd ..
+nikita@TIBCO-PG030Z1L:/home$ ls
+nikita
+nikita@TIBCO-PG030Z1L:/home$ cd ..
+nikita@TIBCO-PG030Z1L:/$ ls
+bin   dev  home  lib    lib64   media  opt   root  sbin  srv  tmp  var
+boot  etc  init  lib32  libx32  mnt    proc  run   snap  sys  usr
+nikita@TIBCO-PG030Z1L:/$ cd etc
+nikita@TIBCO-PG030Z1L:/etc$ ls
+PackageKit                     debconf.conf    iproute2        mke2fs.conf          python3       subgid-
+X11                            debian_version  issue           modprobe.d           python3.10    subuid
+adduser.conf                   default         issue.net       modules              rc0.d         subuid-
+alternatives                   deluser.conf    kernel          modules-load.d       rc1.d         sudo.conf
+apache2                        depmod.d        ld.so.cache     mtab                 rc2.d         sudo_logsrvd.conf
+apparmor                       dhcp            ld.so.conf      nanorc               rc3.d         sudoers
+apparmor.d                     dpkg            ld.so.conf.d    netconfig            rc4.d         sudoers.d
+apport                         e2scrub.conf    ldap            netplan              rc5.d         sysctl.conf
+apt                            environment     legal           networkd-dispatcher  rc6.d         sysctl.d
+bash.bashrc                    ethertypes      libaudit.conf   networks             rcS.d         systemd
+bash_completion                fonts           libnl-3         newt                 resolv.conf   terminfo
+bash_completion.d              fstab           locale.alias    nftables.conf        rmt           timezone
+bindresvport.blacklist         fuse.conf       locale.gen      nginx                rpc           tmpfiles.d
+binfmt.d                       gai.conf        localtime       nsswitch.conf        rsyslog.conf  ubuntu-advantage
+byobu                          groff           logcheck        opt                  rsyslog.d     ucf.conf
+ca-certificates                group           login.defs      os-release           screenrc      udev
+ca-certificates.conf           group-          logrotate.conf  pam.conf             security      ufw
+ca-certificates.conf.dpkg-old  gshadow         logrotate.d     pam.d                selinux       update-manager
+console-setup                  gshadow-        lsb-release     passwd               services      update-motd.d
+cron.d                         gss             machine-id      passwd-              shadow        vim
+cron.daily                     hdparm.conf     magic           perl                 shadow-       vtrgb
+cron.hourly                    host.conf       magic.mime      pm                   shells        wgetrc
+cron.monthly                   hostname        mailcap         polkit-1             skel          wsl.conf
+cron.weekly                    hosts           mailcap.order   profile              ssh           xattr.conf
+crontab                        init.d          manpath.config  profile.d            ssl           xdg
+dbus-1                         inputrc         mime.types      protocols            subgid        zsh_command_not_found
+
+nikita@TIBCO-PG030Z1L:/etc$ cd apache2
+nikita@TIBCO-PG030Z1L:/etc/apache2$ ls
+apache2.conf    conf-enabled  magic           mods-enabled  sites-available
+conf-available  envvars       mods-available  ports.conf    sites-enabled
+nikita@TIBCO-PG030Z1L:/etc/apache2$ cd sites-available
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ ls
+000-default.conf  default-ssl.conf
+
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ ls
+000-default.conf  default-ssl.conf
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ sudo nano awesomeweb.conf
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ sudo a2ensite awesomeweb.conf
+Enabling site awesomeweb.
+To activate the new configuration, you need to run:
+  service apache2 reload
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ service apache2 reload
+ * Reloading Apache httpd web server apache2                                                                             *
+ * The apache2 configtest failed. Not doing anything.
+Output of config test was:
+mkdir: cannot create directory '/var/run/apache2': Permission denied
+chown: changing ownership of '/var/lock/apache2.8gGjlbrTMd': Operation not permitted
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ sudo a2ensite awesomeweb.conf
+Site awesomeweb already enabled
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ sudo a2enmod rewrite
+Enabling module rewrite.
+To activate the new configuration, you need to run:
+  service apache2 restart
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ service apache2 restart
+ * Restarting Apache httpd web server apache2                                                                    [fail]
+ * The apache2 configtest failed.
+Output of config test was:
+mkdir: cannot create directory '/var/run/apache2': Permission denied
+chown: changing ownership of '/var/lock/apache2.CfJqOfnkvP': Operation not permitted
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ pwd
+/etc/apache2/sites-available
+nikita@TIBCO-PG030Z1L:/etc/apache2/sites-available$ cd ../..
+nikita@TIBCO-PG030Z1L:/etc$ pwd
+/etc
+nikita@TIBCO-PG030Z1L:/etc$ ls
+PackageKit                     debconf.conf    iproute2        mke2fs.conf          python3       subgid-
+X11                            debian_version  issue           modprobe.d           python3.10    subuid
+adduser.conf                   default         issue.net       modules              rc0.d         subuid-
+alternatives                   deluser.conf    kernel          modules-load.d       rc1.d         sudo.conf
+apache2                        depmod.d        ld.so.cache     mtab                 rc2.d         sudo_logsrvd.conf
+apparmor                       dhcp            ld.so.conf      nanorc               rc3.d         sudoers
+apparmor.d                     dpkg            ld.so.conf.d    netconfig            rc4.d         sudoers.d
+apport                         e2scrub.conf    ldap            netplan              rc5.d         sysctl.conf
+apt                            environment     legal           networkd-dispatcher  rc6.d         sysctl.d
+bash.bashrc                    ethertypes      libaudit.conf   networks             rcS.d         systemd
+bash_completion                fonts           libnl-3         newt                 resolv.conf   terminfo
+bash_completion.d              fstab           locale.alias    nftables.conf        rmt           timezone
+bindresvport.blacklist         fuse.conf       locale.gen      nginx                rpc           tmpfiles.d
+binfmt.d                       gai.conf        localtime       nsswitch.conf        rsyslog.conf  ubuntu-advantage
+byobu                          groff           logcheck        opt                  rsyslog.d     ucf.conf
+ca-certificates                group           login.defs      os-release           screenrc      udev
+ca-certificates.conf           group-          logrotate.conf  pam.conf             security      ufw
+ca-certificates.conf.dpkg-old  gshadow         logrotate.d     pam.d                selinux       update-manager
+console-setup                  gshadow-        lsb-release     passwd               services      update-motd.d
+cron.d                         gss             machine-id      passwd-              shadow        vim
+cron.daily                     hdparm.conf     magic           perl                 shadow-       vtrgb
+cron.hourly                    host.conf       magic.mime      pm                   shells        wgetrc
+cron.monthly                   hostname        mailcap         polkit-1             skel          wsl.conf
+cron.weekly                    hosts           mailcap.order   profile              ssh           xattr.conf
+crontab                        init.d          manpath.config  profile.d            ssl           xdg
+dbus-1                         inputrc         mime.types      protocols            subgid        zsh_command_not_found
+nikita@TIBCO-PG030Z1L:/etc$ vi hosts
+
+[1]+  Stopped                 vi hosts
+nikita@TIBCO-PG030Z1L:/etc$ vi hosts
+
+[2]+  Stopped                 vi hosts
+nikita@TIBCO-PG030Z1L:/etc$ pwd
+/etc
+nikita@TIBCO-PG030Z1L:/etc$ sudo nano /etc/hosts
+nikita@TIBCO-PG030Z1L:/etc$ vi hosts
+
+[3]+  Stopped                 vi hosts
+nikita@TIBCO-PG030Z1L:/etc$
